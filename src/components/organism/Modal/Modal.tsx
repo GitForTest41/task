@@ -71,9 +71,10 @@ export const Modal = ({ handleCloseModal, listItem }: ModalProps) => {
       e.preventDefault();
       if (listItem.id) {
         await updateItem(combinedStateObj, listItem.id);
-        console.log('update');
+        await handleCloseModal();
       } else {
         await saveTasksList(combinedStateObj);
+        await handleCloseModal();
       }
 
       const response = await getAllTasksList();
@@ -122,7 +123,6 @@ export const Modal = ({ handleCloseModal, listItem }: ModalProps) => {
           name="SAVE"
           styles={{ width: '130px', height: '50px', background: 'rgba(255, 153, 0, 1)', color: 'white', fontSize: '50px', margin: '10px' }}
           type="submit"
-          func={handleCloseModal}
         />
       </MainBtnsContainer>
     </ModalWrapper>,

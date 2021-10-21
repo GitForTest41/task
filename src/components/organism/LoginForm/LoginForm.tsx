@@ -30,8 +30,6 @@ export const LoginForm = () => {
 
   // @ts-ignore //
   const { singIn } = useAuth();
-  const errObj = useError();
-  console.log('this is error object', errObj);
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     e.persist();

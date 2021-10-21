@@ -34,7 +34,6 @@ export const deleteList = async (listId: number) => {
       url: `https://recruitment.ultimate.systems/to-do-lists/${listId}`,
     });
 
-    await console.log('deleteCompleted');
   } catch (e) {
     console.log('error occured when delete list');
   }
@@ -42,8 +41,7 @@ export const deleteList = async (listId: number) => {
 
 export const search = async (phrase: string) => {
   try {
-    const results = await iAxios.get(`https://recruitment.ultimate.systems/to-do-lists?_contains=${phrase}`);
-    await console.log('this is result from search bar', results);
+    await iAxios.get(`https://recruitment.ultimate.systems/to-do-lists?_contains=${phrase}`);
   } catch (e) {
     console.log('error in search bar');
   }
@@ -53,8 +51,7 @@ type AllowedSearchParams = 'name' | 'created_at';
 
 export const sortBy = async (sortParameter: AllowedSearchParams) => {
   try {
-    const result = await iAxios.get(`https://recruitment.ultimate.systems/to-do-lists?_sort=${sortParameter}`);
-    await console.log('results from sorting', result);
+    await iAxios.get(`https://recruitment.ultimate.systems/to-do-lists?_sort=${sortParameter}`);
   } catch (e) {
     console.log('sorting error');
   }
