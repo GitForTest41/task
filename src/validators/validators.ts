@@ -1,8 +1,13 @@
-export const isLengthValid = (randomString: string) => {
-  if (randomString.length < 3) return 'is to short';
+export const isLengthValid = (text: string): boolean => {
+  return text.length < 3;
+};
+
+export const validLength = (text: string) => {
+  if (!isLengthValid(text)) {
+    throw new Error('is to short');
+  }
 };
 
 export const isEmailValid = (email: string): boolean => {
-  const filter = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-  return String(email).search(filter) != -1;
+  return email.includes('@') && email.length >= 3;
 };

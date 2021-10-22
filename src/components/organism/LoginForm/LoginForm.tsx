@@ -38,7 +38,8 @@ export const LoginForm = () => {
 
   const handleSubmit = async (e: any) => {
     try {
-      if (isLengthValid(loginFormValues.login) && isLengthValid(loginFormValues.password)) dispatchError('  form values is not correct');
+      if (isLengthValid(loginFormValues.login) && isLengthValid(loginFormValues.password))
+        dispatchError('  form values is not correct');
       e.preventDefault();
       await singIn(loginFormValues);
     } catch (e) {
@@ -50,8 +51,22 @@ export const LoginForm = () => {
     <Wrapper>
       <StyledTittle>Login</StyledTittle>
       <FormWrapper as="form" onSubmit={handleSubmit}>
-        <FormField label="Email or Username" name="login" id="login" type="text" onChange={handleChange} value={loginFormValues.login} />
-        <FormField label="Password" name="password" id="password" type="password" onChange={handleChange} value={loginFormValues.password} />
+        <FormField
+          label="Email or Username"
+          name="login"
+          id="login"
+          type="text"
+          onChange={handleChange}
+          value={loginFormValues.login}
+        />
+        <FormField
+          label="Password"
+          name="password"
+          id="password"
+          type="password"
+          onChange={handleChange}
+          value={loginFormValues.password}
+        />
         <ActionBtn name="Login" styles={{ width: '60%', height: '40%', background: 'orange', margin: '10px' }} />
       </FormWrapper>
       <BottomSection>

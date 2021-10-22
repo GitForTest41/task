@@ -10,8 +10,6 @@ const StyledSortBtn = styled.button`
 
 export const SortBtn = () => {
   return (
-    <>
-      <StyledSortBtn onClick={() => sortBy('name')}>Sort</StyledSortBtn>
-    </>
+    <StyledSortBtn onClick={() => sortBy('name')}>Sort</StyledSortBtn>
   );
 };

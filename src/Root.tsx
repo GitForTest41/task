@@ -7,27 +7,15 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import { ErrorPopup } from './components/molecules/ErrorMessage/ErrorPopup';
 import { useError } from './components/molecules/ErrorMessage/useError';
 
-export const AuthenticatedApp = () => {
-  return <TodosList />;
-};
+const AuthenticatedApp = () => <TodosList />;
 
-const UnauthenticatedApp = () => {
-  return (
-    <>
-      <Switch>
-        <Route exact path="/">
-          <Redirect to="/login" />
-        </Route>
-        <Route path="/login">
-          <LoginForm />
-        </Route>
-        <Route path="/register">
-          <RegisterForm />
-        </Route>
-      </Switch>
-    </>
-  );
-};
+const UnauthenticatedApp = () => (
+  <Switch>
+    <Route path="/login" component={LoginForm} />
+    <Route path="/register" component={RegisterForm} />
+    <Route render={() => <Redirect to="/login" />} />
+  </Switch>
+);
 
 function Root() {
   // @ts-ignore
@@ -36,8 +24,8 @@ function Root() {
 
   return (
     <>
-      {error ? <ErrorPopup /> : null}
-      <MainTemplate>{user ? <AuthenticatedApp /> : <UnauthenticatedApp />}</MainTemplate>;
+      <MainTemplate>{user ? <AuthenticatedApp /> : <UnauthenticatedApp />}</MainTemplate>
+      {error && <ErrorPopup />}
     </>
   );
 }

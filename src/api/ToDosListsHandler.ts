@@ -33,7 +33,6 @@ export const deleteList = async (listId: number) => {
       method: 'delete',
       url: `https://recruitment.ultimate.systems/to-do-lists/${listId}`,
     });
-
   } catch (e) {
     console.log('error occured when delete list');
   }

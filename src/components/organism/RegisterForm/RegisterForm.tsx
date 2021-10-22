@@ -7,6 +7,7 @@ import { handleRegister } from '../../../api/RegisterHandler';
 import { useLogin } from '../../../providers/LoginProvider';
 import { isEmailValid, isLengthValid } from '../../../validators/validators';
 import { useError } from '../../molecules/ErrorMessage/useError';
+import { useHistory } from 'react-router-dom';
 
 interface FormValuesState {
   username: string;
@@ -32,6 +33,7 @@ export const RegisterForm = () => {
   const [formValues, setFormValues] = useState<FormValuesState>({ ...initialState });
   const { setIsLogged } = useLogin();
   const { dispatchError } = useError();
+  const history = useHistory();
 
   const handleChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     e.persist();
@@ -51,9 +53,11 @@ export const RegisterForm = () => {
     }
   };
 
+  const handleOnBackBtnClicked = () => history.back();
+
   return (
     <Wrapper>
-      <Arrow />
+      <Arrow onClick={handleOnBackBtnClicked} />
       <StyledTittle>Create an new account</StyledTittle>
       <FormWrapper as="form" onSubmit={handleSubmit}>
         <FormField label="Username" name="username" id="username" type="text" onChange={handleChange} value={formValues.username} />

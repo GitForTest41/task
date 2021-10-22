@@ -14,14 +14,19 @@ export type SingleListModel = {
   task: SingleTask[];
 };
 
-type ToDoListsState = {
+interface ToDoListsState {
   toDosLists: SingleListModel[];
   setToDosLists: any;
-  fetchList: any;
   deleteListFromState: any;
-};
+}
 
-export const ToDosListContext = createContext<Partial<ToDoListsState>>({});
+const noop = (...args) => {};
+
+export const ToDosListContext = createContext<ToDoListsState>({
+  toDosLists: [],
+  setToDosLists: noop,
+  deleteListFromState: noop,
+});
 
 export const useToDoLists = () => {
   const toDosLists = useContext(ToDosListContext);
