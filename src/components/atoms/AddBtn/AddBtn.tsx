@@ -3,6 +3,9 @@ import styled from 'styled-components';
 export const PlusBtn = styled.svg`
   cursor: pointer;
   align-self: self-end;
+  margin-top: auto;
+  width: 80px;
+  height: 80px;
 `;
 
 type AddBtnProps = {

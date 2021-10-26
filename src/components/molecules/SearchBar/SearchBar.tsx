@@ -30,13 +30,7 @@ export const SearchBar = () => {
       <StyledSearchBar placeholder="Search" onChange={handleSearchBarChange} value={searchPhrase} onKeyUp={()=>{
         setToDosLists(handleSearch(searchPhrase))
       }} />
-      <button
-        onClick={() => {
-          setToDosLists(handleSearch(searchPhrase));
-        }}
-      >
-        Search Tesy
-      </button>
+
 
       <SearchResults />
     </SearchWrapper>

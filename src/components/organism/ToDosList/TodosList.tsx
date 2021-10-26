@@ -8,6 +8,8 @@ import { ToDoListItem } from '../../molecules/ToDoListItem/ToDoListItem';
 import { useEffect, useState } from 'react';
 import { getAllTasksList } from '../../../api/ToDosListsHandler';
 import { useError } from '../../molecules/ErrorMessage/useError';
+import { SpinnerCircular } from 'spinners-react';
+
 
 export const TodosList = () => {
   const { Modal, isOpen, handleOpenModal, handleCloseModal } = useModal();
@@ -19,14 +21,18 @@ export const TodosList = () => {
     task: [],
   };
   const [currentListItem, setCurrentListItem] = useState<SingleListModel>(initialListItemState);
+  const [isLoading, setIsLoading] = useState(true);
 
   console.log('this is todosState', toDosLists);
 
   useEffect(() => {
     (async () => {
+      setIsLoading(true);
       const results = await getAllTasksList();
       await setToDosLists(results);
       await setFilteredList(results);
+      await setTimeout(() => {}, 5000);
+      await setIsLoading(false);
       await handleToast('Updated');
     })();
   }, [setToDosLists]);
@@ -38,7 +44,19 @@ export const TodosList = () => {
         <SortBtn />
       </SearchSectionWrapper>
       <ListWrapper>
-        {toDosLists?.length !== 0 ? (
+        {isLoading ? (
+          <SpinnerCircular
+            style={{
+              alignSelf:'center',
+              height:'100%'
+            }}
+            size={80}
+            thickness={49}
+            speed={51}
+            color="rgba(172, 99, 57, 1)"
+            secondaryColor="rgba(172, 77, 57, 0.44)"
+          />
+        ) : toDosLists?.length !== 0 ? (
           toDosLists?.map((todoItem) => {
             return (
               <ToDoListItem
