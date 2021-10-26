@@ -22,6 +22,8 @@ export const handleLogin = async (loginObj: LoginModel) => {
     await localStorage.setItem('jwt', response.data.jwt);
     return { confirmed };
   } catch (e) {
-    console.log('error occured');
+    throw new Error('');
   }
 };
+
+//@ToDo zapytac czy taki 'cykl zycia bledu jest prawidlowy,'

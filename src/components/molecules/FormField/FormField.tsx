@@ -7,8 +7,19 @@ export interface FormFieldProps {
   type: string;
   value?: any;
   onChange?: any;
+  onMouseMoveFunc?: any;
 }
 
-export const FormField = ({ label, name, id, type, value, onChange }: FormFieldProps) => {
-  return <Input name={name} id={id} type={type} onChange={onChange} value={value} placeholder={label} />;
+export const FormField = ({ label, name, id, type, value, onChange, onMouseMoveFunc }: FormFieldProps) => {
+  return (
+    <Input
+      name={name}
+      id={id}
+      type={type}
+      onChange={onChange}
+      value={value}
+      placeholder={label}
+      onMouseMove={onMouseMoveFunc}
+    />
+  );
 };

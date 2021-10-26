@@ -16,8 +16,6 @@ export const handleRegister = async (registerObj: RegistrationModel) => {
     });
     return response;
   } catch (e) {
-    console.log('error occures');
+    throw new Error('');
   }
 };
-
-//@ToDo Typing response, and error strong typing instances of errors ? //

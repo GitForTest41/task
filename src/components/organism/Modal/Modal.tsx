@@ -37,13 +37,15 @@ export const Modal = ({ handleCloseModal, listItem }: ModalProps) => {
   const { dispatchError } = useError();
 
   const handleTaskNameChanged = useCallback(
-    (index: number) => (newTaskName: string) =>
-      setTodos(todos.map((todosItem, i) => (i === index ? { ...todosItem, name: newTaskName } : todosItem))),
+    (index: number) => (newTaskName: string) => {
+      setTodos(todos.map((todosItem, i) => (i === index ? { ...todosItem, name: newTaskName } : todosItem)));
+    },
     [todos]
   );
 
   const handleTaskCheckedChanged = useCallback(
-    (index: number) => (isChecked: boolean) => setTodos(todos.map((toDosItem, i) => (i === index ? { ...toDosItem, isDone: isChecked } : toDosItem))),
+    (index: number) => (isChecked: boolean) =>
+      setTodos(todos.map((toDosItem, i) => (i === index ? { ...toDosItem, isDone: isChecked } : toDosItem))),
     [todos]
   );
 
@@ -51,7 +53,10 @@ export const Modal = ({ handleCloseModal, listItem }: ModalProps) => {
     setTodos([...todos, { ...initialToDoTask }]);
   };
 
-  const handleListNameChanged = useCallback((e: React.ChangeEvent<HTMLInputElement>) => setListName(e.target.value), []); //@Todo this should be a problem dependencie list
+  const handleListNameChanged = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => setListName(e.target.value),
+    []
+  );
 
   useEffect(() => {
     modalContainer?.appendChild(modalNode);
@@ -66,7 +71,12 @@ export const Modal = ({ handleCloseModal, listItem }: ModalProps) => {
     tasks: todos,
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
+
+    if (!combinedStateObj.name) {
+      dispatchError('You cannot add empty list');
+      return;
+    }
     try {
       e.preventDefault();
       if (listItem.id) {
@@ -104,7 +114,14 @@ export const Modal = ({ handleCloseModal, listItem }: ModalProps) => {
       })}
 
       <AddTasksWrapper>
-        <ActionBtn name="cancel" styles={{ color: 'withe', width: '100px', height: '40px', background: 'rgba(255, 61, 0, 1)' }} />
+        <ActionBtn
+          name="cancel"
+          styles={{ color: 'withe', width: '100px', height: '40px', background: 'rgba(255, 61, 0, 1)' }}
+          func={(e) => {
+            e.preventDefault();
+            console.log('clicked');
+          }}
+        />
         <ActionBtn
           name="ADD"
           styles={{ color: 'withe', width: '100px', height: '40px', background: 'rgba(255, 153, 0, 1)' }}
@@ -115,13 +132,27 @@ export const Modal = ({ handleCloseModal, listItem }: ModalProps) => {
       <MainBtnsContainer>
         <ActionBtn
           name="CANCEL"
-          styles={{ width: '130px', height: '50px', background: 'rgba(45, 45, 45, 1)', border: 'none', color: 'orange', fontSize: '50px' }}
+          styles={{
+            width: '130px',
+            height: '50px',
+            background: 'rgba(45, 45, 45, 1)',
+            border: 'none',
+            color: 'orange',
+            fontSize: '50px',
+          }}
           type="button"
           func={handleCloseModal}
         />
         <ActionBtn
           name="SAVE"
-          styles={{ width: '130px', height: '50px', background: 'rgba(255, 153, 0, 1)', color: 'white', fontSize: '50px', margin: '10px' }}
+          styles={{
+            width: '130px',
+            height: '50px',
+            background: 'rgba(255, 153, 0, 1)',
+            color: 'white',
+            fontSize: '50px',
+            margin: '10px',
+          }}
           type="submit"
         />
       </MainBtnsContainer>

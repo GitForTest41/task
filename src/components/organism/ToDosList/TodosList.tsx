@@ -5,17 +5,31 @@ import { ItemListsWrapper, SearchSectionWrapper, ListWrapper, Paragraph } from '
 import { useModal } from '../Modal/useModal';
 import { SingleListModel, useToDoLists } from '../../../providers/ToDosListsProvider';
 import { ToDoListItem } from '../../molecules/ToDoListItem/ToDoListItem';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getAllTasksList } from '../../../api/ToDosListsHandler';
+import { useError } from '../../molecules/ErrorMessage/useError';
 
 export const TodosList = () => {
   const { Modal, isOpen, handleOpenModal, handleCloseModal } = useModal();
 
-  const { toDosLists } = useToDoLists();
+  const { toDosLists, setToDosLists, setFilteredList } = useToDoLists();
+  const { handleToast } = useError();
   const initialListItemState: SingleListModel = {
     name: '',
     task: [],
   };
   const [currentListItem, setCurrentListItem] = useState<SingleListModel>(initialListItemState);
+
+  console.log('this is todosState', toDosLists);
+
+  useEffect(() => {
+    (async () => {
+      const results = await getAllTasksList();
+      await setToDosLists(results);
+      await setFilteredList(results);
+      await handleToast('Updated');
+    })();
+  }, [setToDosLists]);
 
   return (
     <ItemListsWrapper>

@@ -1,8 +1,9 @@
 import { Wrapper, Title } from './ErrorPopup.styles';
+type ErrorPopupProps = {
+  message: string;
+};
 
-const defaultErrorMessage = 'Something went wrong, please try again or contact to support';
-
-export const ErrorPopup = ({ message = defaultErrorMessage }) => {
+export const ErrorPopup = ({ message }: ErrorPopupProps) => {
   return (
     <Wrapper>
       <Title>OOPS!!</Title>

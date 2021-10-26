@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Navigation } from './Navigation/Navigation';
 import { TemplateWrapper } from './MainTemplate.styles';
 
-export const MainTemplate = ({ children }: any) => {
+export const MainTemplate: FC = ({ children }) => {
   return (
     <TemplateWrapper>
       <Navigation />
@@ -10,6 +10,3 @@ export const MainTemplate = ({ children }: any) => {
     </TemplateWrapper>
   );
 };
-
-//@Todo children  type Any//
-//@Todo if user not log in hide logout button

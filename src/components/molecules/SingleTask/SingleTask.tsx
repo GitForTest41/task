@@ -8,8 +8,14 @@ interface SingleTaskProps {
   onCheckedChange(isChecked: boolean): void;
 }
 export const SingleTask = ({ isChecked, taskName, onTaskNameChanged, onCheckedChange }: SingleTaskProps) => {
-  const handleCheckedChanged = useCallback((e: React.ChangeEvent<HTMLInputElement>) => onCheckedChange(e.target.checked), [onCheckedChange]);
-  const handleNameChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => onTaskNameChanged(e.target.value), [onTaskNameChanged]);
+  const handleCheckedChanged = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => onCheckedChange(e.target.checked),
+    [onCheckedChange]
+  );
+  const handleNameChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => onTaskNameChanged(e.target.value),
+    [onTaskNameChanged]
+  );
 
   return (
     <SingleTaskWrapper>

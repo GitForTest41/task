@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, FC, useContext, useState } from 'react';
 
 export const LoginContext = createContext({
   isLogged: false,
@@ -9,7 +9,7 @@ export const useLogin = () => {
   return useContext(LoginContext);
 };
 
-export const LoginProvider = ({ children }: any) => {
+export const LoginProvider: FC = ({ children }) => {
   const [isLogged, setIsLogged] = useState(false);
 
   return (

@@ -1,10 +1,10 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, FC, useContext, useEffect, useState } from 'react';
 import { LoginModel } from '../components/organism/LoginForm/LoginForm';
 import { handleLogin } from '../api/LoginHandler';
 
 const AuthContext = createContext({});
 
-export const AuthProvider = ({ children }: any) => {
+export const AuthProvider: FC = ({ children }) => {
   const [user, setUser] = useState<boolean | any>(null);
 
   const singIn = async (loginObj: LoginModel) => {

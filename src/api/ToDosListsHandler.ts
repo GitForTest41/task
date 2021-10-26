@@ -3,7 +3,7 @@ import { SingleListModel } from '../providers/ToDosListsProvider';
 
 const GET__TODOS: string = 'https://recruitment.ultimate.systems/to-do-lists';
 
-const serializeData = (data: any) => {
+export const serializeData = (data: any) => {
   const result = data.map((dataItem: SingleListModel) => {
     const serialized: SingleListModel = {
       id: dataItem.id,
@@ -33,7 +33,6 @@ export const deleteList = async (listId: number) => {
       method: 'delete',
       url: `https://recruitment.ultimate.systems/to-do-lists/${listId}`,
     });
-
   } catch (e) {
     console.log('error occured when delete list');
   }
@@ -51,9 +50,9 @@ type AllowedSearchParams = 'name' | 'created_at';
 
 export const sortBy = async (sortParameter: AllowedSearchParams) => {
   try {
-    await iAxios.get(`https://recruitment.ultimate.systems/to-do-lists?_sort=${sortParameter}`);
+   return  await iAxios.get(`https://recruitment.ultimate.systems/to-do-lists?_sort=${sortParameter}`);
   } catch (e) {
-    console.log('sorting error');
+    throw new Error('Sroting error')
   }
 };
 

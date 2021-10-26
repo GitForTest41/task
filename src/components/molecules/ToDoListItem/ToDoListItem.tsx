@@ -1,6 +1,7 @@
 import { SingleListModel, useToDoLists } from '../../../providers/ToDosListsProvider';
 import { deleteList, getAllTasksList } from '../../../api/ToDosListsHandler';
 import { ItemWrapper, ListName } from './ToDoLisItem.style';
+import { TrashBtn } from '../../atoms/TrashBtn/TrashBtn';
 
 interface ToDoListItemProps {
   toDosList: SingleListModel;
@@ -19,13 +20,14 @@ export const ToDoListItem = ({ toDosList, onClick }: ToDoListItemProps) => {
     <ItemWrapper>
       <ListName onClick={onClick}>{toDosList.name}</ListName>
       <span>Created at:{toDosList.created_at}</span>
-      <button
-        onClick={async () => {
-          await handleDelete(toDosList.id);
-        }}
-      >
-        Delete List
-      </button>
+      {/*<button*/}
+      {/*  onClick={async () => {*/}
+      {/*    await handleDelete(toDosList.id);*/}
+      {/*  }}*/}
+      {/*>*/}
+      {/*  Delete List*/}
+      {/*</button>*/}
+      <TrashBtn onClickHandle={handleDelete} id={toDosList.id}/>
     </ItemWrapper>
   );
 };

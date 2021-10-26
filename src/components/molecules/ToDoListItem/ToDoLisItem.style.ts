@@ -12,6 +12,10 @@ export const ItemWrapper = styled.div`
   cursor: pointer;
   padding: 2%;
   margin-bottom: 20px;
+
+  &:hover {
+    color: orange;
+  }
 `;
 
 export const ListName = styled.span`

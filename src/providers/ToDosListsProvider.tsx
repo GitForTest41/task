@@ -1,5 +1,4 @@
-import { createContext, FC, useContext, useEffect, useState } from 'react';
-import { getAllTasksList } from '../api/ToDosListsHandler';
+import { createContext, FC, useContext, useState } from 'react';
 
 export type SingleTask = {
   id: number;
@@ -14,12 +13,14 @@ export type SingleListModel = {
   task: SingleTask[];
 };
 
-type ToDoListsState = {
+interface ToDoListsState {
   toDosLists: SingleListModel[];
+  filteredList: SingleListModel[];
+  setFilteredList: any;
   setToDosLists: any;
-  fetchList: any;
   deleteListFromState: any;
-};
+  filterLists: (string) => any;
+}
 
 export const ToDosListContext = createContext<Partial<ToDoListsState>>({});
 
@@ -33,13 +34,7 @@ export const useToDoLists = () => {
 
 export const ToDosListsProvider: FC = ({ children }) => {
   const [toDosLists, setToDosLists] = useState<SingleListModel[]>([]);
-
-  useEffect(() => {
-    (async () => {
-      const response = await getAllTasksList();
-      setToDosLists(response);
-    })();
-  }, []);
+  const [filteredList, setFilteredList] = useState<SingleListModel[]>([]);
 
   const deleteListFromState = (idToDelete: number): void => {
     const result: SingleListModel[] = toDosLists.filter((item: SingleListModel) => item.id !== idToDelete);
@@ -52,6 +47,8 @@ export const ToDosListsProvider: FC = ({ children }) => {
         toDosLists,
         deleteListFromState,
         setToDosLists,
+        setFilteredList,
+        filteredList,
       }}
     >
       {children}

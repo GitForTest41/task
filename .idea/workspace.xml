@@ -2,14 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4dac200a-a978-4daa-8fa8-faed7e108662" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/atoms/TrashBtn/TrashBtn.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/molecules/PasswordInfo/PasswordInfo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/toastHelper.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Root.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Root.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/LoginHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/LoginHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/RegisterHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/RegisterHandler.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/ToDosListsHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ToDosListsHandler.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/icons/trash-can-hand-drawn-symbol-svgrepo-com.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/ActionBtn/ActionBtn.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/ActionBtn/ActionBtn.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/ActionBtn/ActionBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/ActionBtn/ActionBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/AddBtn/AddBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/AddBtn/AddBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/Arrow/Arrow.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/Arrow/Arrow.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/LogoutBtn/LogoutBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/LogoutBtn/LogoutBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/atoms/SortBtn/SortBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/atoms/SortBtn/SortBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/ErrorMessage/ErrorPopup.styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/ErrorMessage/ErrorPopup.styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/ErrorMessage/ErrorPopup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/ErrorMessage/ErrorPopup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/ErrorMessage/useError.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/ErrorMessage/useError.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/FormField/FormField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/FormField/FormField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/SearchBar/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/SearchBar/SearchBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/SingleTask/SingleTask.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/SingleTask/SingleTask.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/ToDoListItem/ToDoLisItem.style.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/ToDoListItem/ToDoLisItem.style.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/molecules/ToDoListItem/ToDoListItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/molecules/ToDoListItem/ToDoListItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/organism/LoginForm/LoginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organism/LoginForm/LoginForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/organism/Modal/Modal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organism/Modal/Modal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/providers/AppProviders.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/AppProviders.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organism/RegisterForm/RegisterForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organism/RegisterForm/RegisterForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/organism/ToDosList/TodosList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/organism/ToDosList/TodosList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/providers/LoginProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/LoginProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/providers/ToDosListsProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/ToDosListsProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/providers/useAuth.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/useAuth.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/templates/MainTemplate/MainTemplate.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/templates/MainTemplate/MainTemplate.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/validators/validators.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/validators/validators.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +49,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -30,6 +61,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
@@ -58,6 +90,13 @@
       <option name="presentableId" value="Default" />
       <updated>1634829975361</updated>
       <workItem from="1634829980486" duration="2064000" />
+      <workItem from="1634899424063" duration="1891000" />
+      <workItem from="1634912144903" duration="7816000" />
+      <workItem from="1634989172152" duration="6503000" />
+      <workItem from="1635010664603" duration="4481000" />
+      <workItem from="1635079899617" duration="8468000" />
+      <workItem from="1635142720253" duration="13456000" />
+      <workItem from="1635157628800" duration="14064000" />
     </task>
     <servers />
   </component>
@@ -74,5 +113,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
